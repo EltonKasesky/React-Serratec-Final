@@ -11,6 +11,7 @@ import {
 import { TbLockFilled } from "react-icons/tb";
 import { HiIdentification } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import Copyright from "../Copyright";
 
 const Register = () => {
     return (
@@ -93,7 +94,7 @@ const Register = () => {
                     <div className={styles.loginImage}></div>
                 </section>
             </div>
-            <p className={styles.copy}>Todos os direitos reservados© 2025</p>
+            <Copyright/>
         </main>
     );
 };
