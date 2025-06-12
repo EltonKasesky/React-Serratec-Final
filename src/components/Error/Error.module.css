@@ -1,0 +1,150 @@
+:root {
+    --bg-main-light: #fff;
+    --bg-secondary-light: #f7f7f7;
+    --error-text-light: #21349b;
+    --text-main-light: #161616;
+    --text-secondary-light: #646464;
+    --back-light: #21349b;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-secondary-light);
+}
+
+.primarySection {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 70%;
+    max-height: 80%;
+    border-radius: 8px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--bg-main-light);
+}
+
+.leftSection,
+.rightSection {
+    flex: 1;
+}
+
+.leftSection {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 15px;
+}
+
+img {
+    width: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.leftTexts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.leftTexts p {
+    color: var(--error-text-light);
+    font-weight: 600;
+}
+
+.leftTexts h1 {
+    font-size: 48px;
+    color: var(--text-main-light);
+}
+
+.leftTexts h2 {
+    color: var(--text-secondary-light);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.backHome a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--back-light);
+}
+
+.backHome:hover a {
+    text-decoration: underline;
+}
+
+.icon {
+    font-size: 30px;
+    color: var(--back-light);
+}
+
+.rightImage {
+    background-image: url("/images/error/404.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 0 8px 8px 0;
+    width: 100%;
+    height: 100%;
+}
+
+.copy {
+    color: var(--text-light);
+    padding: 20px;
+}
+
+@media (max-width: 1300px) {
+    .primarySection {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        justify-content: start;
+    }
+
+    .primarySection {
+        flex-direction: column;
+        max-width: 95%;
+    }
+
+    .leftSection {
+        justify-content: space-between;
+    }
+
+    .leftTexts {
+        margin-top: 0;
+    }
+
+    .rightImage {
+        border-radius: 0 0 8px 8px;
+    }
+}
+
+@media (max-width: 460px) {
+    .primarySection {
+        max-width: 100%;
+    }
+
+    img {
+        width: 200px;
+    }
+
+    .leftTexts h1 {
+        font-size: 32px;
+    }
+
+    .rightImage {
+        border-radius: 0;
+    }
+}

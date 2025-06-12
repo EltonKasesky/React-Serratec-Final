@@ -184,7 +184,7 @@
 }
 
 .loginImage {
-    background-image: url("/login/login.png");
+    background-image: url("/images/login/login.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
