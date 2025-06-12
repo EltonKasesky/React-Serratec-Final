@@ -1,0 +1,30 @@
+header{
+width: 100%;
+height: 100px;
+background-color: black;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+
+header img{
+    width: 25%;
+    padding: 1rem;
+
+}
+
+header h1{
+    color: aliceblue;
+
+}
+
+header a{
+  color: #b74b4b;
+  font-size: 25px;
+
+
+}
+
+
+
