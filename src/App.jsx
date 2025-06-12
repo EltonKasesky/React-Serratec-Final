@@ -1,13 +1,14 @@
-import LoginPage from "./pages/Login";
-import RegisterPage from "./pages/Register";
+import { BrowserRouter } from 'react-router-dom'
+import AppRouter from './routes/AppRouter'
+import Header from './components/Header'
 
-const App = () => {
-    return (
-        <>
-            <LoginPage/>
-            <RegisterPage/>
-        </>
-    );
-}
-
-export default App;
+export default function App() {
+  return (
+    <div>
+        <BrowserRouter>
+            <AppRouter/>
+            <Header/>
+        </BrowserRouter>
+    </div>
+  );
+};
