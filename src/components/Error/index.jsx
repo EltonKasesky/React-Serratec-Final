@@ -6,7 +6,7 @@ import Copyright from '../Copyright';
 const Error = () => {
     return (
         <>
-            <main className={styles.container}>
+            <main className={`${styles.container} ${styles.themeLocal}`}>
                 <section className={styles.primarySection}>
                     <section className={styles.leftSection}>
                         <img src="/images/logo/logo.jpg" alt="Logo" />

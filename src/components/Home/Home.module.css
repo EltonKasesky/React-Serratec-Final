@@ -1,15 +1,15 @@
-/*:root {
-    --bg-main-light: #fff;
-    --bg-secondary-light: #f7f7f7;
-    --border-color: #ddd;
-    --text-light: #333;
-    --text-accent: #21349b;
-    --card-radius: 12px;
-    --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
-    --buy-bg-light: #21349b;
-    --buy-text-light: #fff;
-}*/
+.themeLocal {
+  --bg-main-light: #fff;
+  --bg-secondary-light: #f7f7f7;
+  --border-color: #ddd;
+  --text-light: #333;
+  --text-accent: #21349b;
+  --card-radius: 12px;
+  --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --buy-bg-light: #21349b;
+  --buy-text-light: #fff;
+}
 
 .container {
     display: flex;
