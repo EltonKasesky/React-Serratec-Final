@@ -17,7 +17,7 @@ import Copyright from "../Copyright";
 
 const Login = () => {
     return (
-        <main className={styles.container}>
+        <main className={`${styles.container} ${styles.themeLocal}`}>
             <div className={styles.primarySection}>
                 <section className={styles.leftSection}>
                     <Link to={"/"} className={styles.backButton}>

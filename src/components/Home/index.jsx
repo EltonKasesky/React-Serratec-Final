@@ -26,7 +26,7 @@ const Home = () => {
     }, {});
 
     return (
-        <main className={styles.container}>
+        <main className={`${styles.container} ${styles.themeLocal}`}>
             {Object.entries(groupedProducts).map(([category, items]) => (
                 <section key={category} className={styles.categorySection}>
                     <h2 className={styles.categoryTitle}>{category}</h2>
