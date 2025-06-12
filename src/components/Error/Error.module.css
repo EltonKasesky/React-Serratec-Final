@@ -97,11 +97,6 @@ img {
     height: 100%;
 }
 
-.copy {
-    color: var(--text-light);
-    padding: 20px;
-}
-
 @media (max-width: 1300px) {
     .primarySection {
         max-width: 80%;

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import * as styles from './Error.module.css';
 import { IoIosArrowRoundBack } from "react-icons/io";
+import Copyright from '../Copyright';
 
 const Error = () => {
     return (
@@ -12,7 +13,7 @@ const Error = () => {
                         <div className={styles.leftTexts}>
                             <p>404</p>
                             <h1>Pagina não encontrada</h1>
-                            <h2>Desculpe, nós não conseguimos encontrar a página que voce esta buscando.</h2>
+                            <h2>Desculpe, nós não conseguimos encontrar a página que você esta buscando.</h2>
                             <div className={styles.backHome}>
                                 <Link to={"/"}>
                                     <IoIosArrowRoundBack className={styles.icon} />
@@ -25,7 +26,7 @@ const Error = () => {
                         <div className={styles.rightImage}></div>
                     </section>
                 </section>
-                <p className={styles.copy}>Todos os direitos reservados© 2025</p>
+                <Copyright/>
             </main>
         </>
     );

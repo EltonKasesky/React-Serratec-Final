@@ -13,6 +13,7 @@ import {
     FaGoogle
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Copyright from "../Copyright";
 
 const Login = () => {
     return (
@@ -74,7 +75,7 @@ const Login = () => {
                     <div className={styles.loginImage}></div>
                 </section>
             </div>
-            <p className={styles.copy}>Todos os direitos reservados© 2025</p>
+            <Copyright/>
         </main>
     );
 };
