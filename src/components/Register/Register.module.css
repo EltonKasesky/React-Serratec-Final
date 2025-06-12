@@ -85,7 +85,7 @@
 }
 
 .inputForm:focus-within .icon {
-  color: var(--input-icon-active);
+    color: var(--input-icon-active);
 }
 
 .icon {
