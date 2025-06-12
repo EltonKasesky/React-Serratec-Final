@@ -1,6 +1,7 @@
 import * as styles from "./Login.module.css"
 import {
-    IoPersonAdd
+    IoPersonAdd,
+    IoArrowBackCircle
 } from "react-icons/io5";
 import {
     MdEmail
@@ -11,12 +12,16 @@ import {
     FaFacebookF,
     FaGoogle
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
         <main className={styles.container}>
             <div className={styles.primarySection}>
                 <section className={styles.leftSection}>
+                    <Link to={"/"} className={styles.backButton}>
+                        <IoArrowBackCircle className={styles.backIcon}/>
+                    </Link>
                     <div className={styles.contentForm}>
                         <h1>Fazer Login</h1>
                         <div className={styles.contentLoginButtons}>
@@ -60,7 +65,7 @@ const Login = () => {
                         </form>
 
                         <p className={styles.userLogin}>
-                            Ainda não sou um usuário <a href="#">Fazer registro</a>
+                            Ainda não sou um usuário <Link to={"/register"}>Fazer registro</Link>
                             <IoPersonAdd className={styles.icon} />
                         </p>
                     </div>

@@ -1,8 +1,13 @@
+import Clientes from "../../components/Clientes";
+import Header from "../../components/Header";
 
-export default function Clientes() {
-  return (
-    
-        <h1>Clientes</h1>
-    
-  )
-}
+const ClientesPage = () => {
+    return (
+        <>  
+            <Header/>
+            <Clientes/>
+        </>
+    );
+};
+
+export default ClientesPage;

@@ -1,7 +1,8 @@
 import * as styles from "./Register.module.css"
-import { 
+import {
     IoPersonSharp,
-    IoLogIn
+    IoLogIn,
+    IoArrowBackCircle
 } from "react-icons/io5";
 import {
     MdPermPhoneMsg,
@@ -9,12 +10,16 @@ import {
 } from "react-icons/md";
 import { TbLockFilled } from "react-icons/tb";
 import { HiIdentification } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     return (
         <main className={styles.container}>
             <div className={styles.primarySection}>
                 <section className={styles.leftSection}>
+                    <Link to={"/"} className={styles.backButton}>
+                        <IoArrowBackCircle className={styles.backIcon} />
+                    </Link>
                     <h1>Fazer Registro</h1>
                     <div className={styles.contentForm}>
                         <form>
@@ -79,8 +84,8 @@ const Register = () => {
                         </form>
 
                         <p className={styles.userLogin}>
-                            Eu já sou um usuário <a href="#">Fazer login</a>
-                            <IoLogIn className={styles.icon}/>
+                            Eu já sou um usuário <Link to={"/login"}>Fazer login</Link>
+                            <IoLogIn className={styles.icon} />
                         </p>
                     </div>
                 </section>

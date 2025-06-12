@@ -46,6 +46,18 @@
 
 .leftSection {
     padding: 20px;
+    position: relative;
+}
+
+.backButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.backIcon {
+    font-size: 30px;
+    color: var(--text-light);
 }
 
 .leftSection h1 {
