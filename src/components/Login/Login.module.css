@@ -1,4 +1,4 @@
-:root {
+/*:root {
     --bg-main-light: #fff;
     --bg-secondary-light: #f7f7f7;
     --border-light: #21349b;
@@ -12,7 +12,7 @@
     --btn-bg-light-hover: #fff;
     --btn-text-light-hover: #21349b;
     --user-text-light: #303030;
-}
+}*/
 
 .container {
     display: flex;

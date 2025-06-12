@@ -1,0 +1,95 @@
+/*:root {
+    --bg-main-light: #fff;
+    --bg-secondary-light: #f7f7f7;
+    --border-color: #ddd;
+    --text-light: #333;
+    --text-accent: #21349b;
+    --card-radius: 12px;
+    --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
+    --buy-bg-light: #21349b;
+    --buy-text-light: #fff;
+}*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: var(--bg-secondary-light);
+}
+
+.categorySection {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: 48px;
+}
+
+.categoryTitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--text-light);
+    border-left: 4px solid var(--text-accent);
+    padding-left: 12px;
+}
+
+.contentProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    height: 100%;
+    background-color: var(--bg-main-light);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-default);
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-color);
+}
+
+.product h3 {
+    text-align: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    color: var(--text-accent);
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.buyContent {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+}
+
+.buyButton {
+    width: 100%;
+    padding: 5px 3px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 1px solid var(--buy-bg-light);
+    background-color: var(--buy-bg-light);
+    color: var(--buy-text-light);
+}

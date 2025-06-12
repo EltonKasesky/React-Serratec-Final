@@ -1,9 +1,55 @@
+import * as styles from './Home.module.css';
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 const Home = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        axios
+            .get("http://localhost:8080/produtos")
+            .then((response) => {
+                setProducts(response.data);
+            })
+            .catch((error) => {
+                console.error("Erro ao enviar requisição GET em produtos:", error);
+            });
+    }, []);
+
+    const groupedProducts = products.reduce((acc, product) => {
+        const category = product.categoria;
+        if (!acc[category]) {
+            acc[category] = [];
+        }
+        acc[category].push(product);
+        return acc;
+    }, {});
+
     return (
-        <>
-            <h1>Home</h1>
-        </>
+        <main className={styles.container}>
+            {Object.entries(groupedProducts).map(([category, items]) => (
+                <section key={category} className={styles.categorySection}>
+                    <h2 className={styles.categoryTitle}>{category}</h2>
+                    <div className={styles.contentProducts}>
+                        {items.map((product, index) => (
+                            <div key={index} className={styles.product}>
+                                <h3>{product.nome}</h3>
+                                <div className={styles.productInfo}>
+                                    <p>{product.descricao}</p>
+                                    <p>R$: {product.preco}</p>
+                                    <p>Categoria: {product.categoria}</p>
+                                </div>
+                                
+                                <div className={styles.buyContent}>
+                                    <button className={styles.buyButton}>Comprar</button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            ))}
+        </main>
     );
-}
+};
 
 export default Home;
