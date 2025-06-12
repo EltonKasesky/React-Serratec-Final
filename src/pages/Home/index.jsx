@@ -1,8 +1,13 @@
+import Header from "../../components/Header";
+import Home from "../../components/Home";
 
-export default function Home() {
-  return (
-    
-        <h1>Home</h1>
-    
-  )
-}
+const HomePage = () => {
+    return (
+        <>
+            <Header/>
+            <Home/>
+        </>
+    );
+};
+
+export default HomePage;
