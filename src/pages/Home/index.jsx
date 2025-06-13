@@ -6,6 +6,7 @@ const HomePage = () => {
         <>
             <Header/>
             <Home/>
+            teste
         </>
     );
 };
