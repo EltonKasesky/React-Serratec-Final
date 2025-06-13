@@ -130,7 +130,7 @@
 }
 
 .inputForm:focus-within .icon {
-  color: var(--input-icon-active);
+    color: var(--input-icon-active);
 }
 
 .icon {
@@ -207,9 +207,11 @@
     .container {
         justify-content: start;
         align-items: center;
+        height: auto;
     }
 
     .primarySection {
+        flex-direction: column-reverse;
         margin-top: 15px;
         max-width: 95%;
         max-height: 100%;
@@ -234,5 +236,11 @@
         margin-top: 15px;
         max-width: 100%;
         flex-direction: column;
+    }
+}
+
+@media (max-height: 700px) and (min-width:768px) {
+    .primarySection {
+        max-height: 80%;
     }
 }

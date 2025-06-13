@@ -29,7 +29,15 @@ const Home = () => {
         <main className={`${styles.container} ${styles.themeLocal}`}>
             {Object.entries(groupedProducts).map(([category, items]) => (
                 <section key={category} className={styles.categorySection}>
-                    <h2 className={styles.categoryTitle}>{category}</h2>
+                    <h2 className={styles.categoryTitle}>
+                        {category
+                            .replaceAll("_", " ")
+                            .toLowerCase()
+                            .split(" ")
+                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                            .join(" ")
+                        }
+                    </h2>
                     <div className={styles.contentProducts}>
                         {items.map((product, index) => (
                             <div key={index} className={styles.product}>
@@ -37,9 +45,18 @@ const Home = () => {
                                 <div className={styles.productInfo}>
                                     <p>{product.descricao}</p>
                                     <p>R$: {product.preco}</p>
-                                    <p>Categoria: {product.categoria}</p>
+                                    <p>
+                                        Categoria:ﾠ
+                                        {product.categoria
+                                            .replaceAll("_", " ")
+                                            .toLowerCase()
+                                            .split(" ")
+                                            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                                            .join(" ")
+                                        }
+                                    </p>
                                 </div>
-                                
+
                                 <div className={styles.buyContent}>
                                     <button className={styles.buyButton}>Comprar</button>
                                 </div>

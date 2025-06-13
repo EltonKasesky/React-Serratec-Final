@@ -43,6 +43,10 @@
 }
 
 .leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
     padding: 20px;
     position: relative;
 }
@@ -63,6 +67,13 @@
     text-align: center;
     margin: 10px 0;
     font-size: 32px;
+}
+
+.contentForm {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
 }
 
 .contentForm form {
@@ -126,6 +137,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 5px;
     margin: 20px 0;
     color: var(--user-text-light);
@@ -171,6 +183,7 @@
     .container {
         justify-content: start;
         align-items: center;
+        height: auto;
     }
 
     .primarySection {
@@ -198,5 +211,11 @@
         margin-top: 15px;
         max-width: 100%;
         flex-direction: column;
+    }
+}
+
+@media (max-height: 860px) and (min-width:768px) {
+    .primarySection {
+        max-height: 80%;
     }
 }
