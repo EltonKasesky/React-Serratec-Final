@@ -1,5 +1,46 @@
+💊 FarmaDEV
+
+Descrição:
+O farmaDEV é um projeto desenvolvido com React e Vite, com foco na criação de uma aplicação moderna e responsiva voltada ao setor farmacêutico. 
+A aplicação traz um visual limpo, suporte a tema escuro/claro, rotas dinâmicas, formulários validados e integração com APIs externas.
+
+🚀 Tecnologias utilizadas
+
+⚛️ React
+⚡ Vite
+💅 Styled Components
+📡 Axios
+🧭 React Router Dom
+📝 React Hook Form
+✅ Yup
+
+💻 Como rodar o projeto localmente
+Clone o repositório
+Acesse o diretório do projeto
+Instale as dependências:
+
+npm installl
 mpm install styled-components
 npm install axios
 npm install react-router-dom
 npm install react-hook-form
 npm install @hookform/resolvers yup
+
+Execute o projeto
+npm run dev
+
+✨ Funcionalidades
+ Tema claro e escuro com alternância
+ Layout responsivo (desktop e mobile)
+ Navegação com React Router
+ Formulários com validação (React Hook Form + Yup)
+ Integração com API usando Axios
+ Componentização e estilização com Styled Components
+
+👥 Equipe
+Caroline Brand
+Elton
+João Vitor Pinheiro
+Leandro José
+Patrícia
+Taiane
