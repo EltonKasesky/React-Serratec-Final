@@ -1,29 +1,137 @@
-header {
-  background: #213499;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  justify-content: space-between;
+.navHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    background-color: #21349b;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
 }
 
-header a {
-  color: white;
-  text-decoration: none;
-
+.logo {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
-header a:hover,
-header a.active {
-  color: #ffd200;
-  border-bottom: 3px solid #ffd200;
+.menu {
+    display: flex;
+    align-items: center;
 }
 
-ul {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  list-style: none;
-  padding-right: 2rem;
-  margin: 0;
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem,
+.navButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 4px;
+    transition: color 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+
+.navItem::after,
+.navButton::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffd200;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.navItem:hover::after,
+.navButton:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.navItem:hover,
+.navButton:hover {
+    color: #ffd200;
+}
+
+.navButton {
+    font-family: inherit;
+}
+
+.hamburgerButton {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+}
+
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .navHeader {
+        padding: 0 20px;
+    }
+
+    .hamburgerButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navLinks {
+        position: fixed;
+        inset: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .navLinksOpen {
+        transform: translateX(0%);
+    }
+
+    .navItem,
+    .navButton {
+        font-size: 24px;
+        color: #333;
+    }
+
+    .hamburgerButton {
+        color: #ffd200;
+    }
 }

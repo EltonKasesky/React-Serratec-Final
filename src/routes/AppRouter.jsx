@@ -4,6 +4,7 @@ import RegisterPage from "../pages/Register";
 import ErrorPage from "../pages/Error";
 import ProdutosPage from "../pages/Produtos";
 import ClientesPage from "../pages/Clientes";
+import AdminPage from "../pages/Admin";
 import { Route, Routes } from 'react-router-dom'
 
 export default function AppRouter() {
@@ -14,6 +15,7 @@ export default function AppRouter() {
             <Route path="/register" element={<RegisterPage />}></Route>
             <Route path="/produtos" element={<ProdutosPage />}></Route>
             <Route path="/clientes" element={<ClientesPage />}></Route>
+            <Route path="/admin" element={<AdminPage />}></Route>
             <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
     )
