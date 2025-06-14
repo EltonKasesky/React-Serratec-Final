@@ -90,7 +90,14 @@
     border-radius: 4px;
     font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s;
     border: 1px solid var(--buy-bg-light);
     background-color: var(--buy-bg-light);
     color: var(--buy-text-light);
+}
+
+.buyButton:hover {
+    border: 1px solid var(--buy-bg-light);
+    background-color: transparent;
+    color: var(--text-accent);
 }
