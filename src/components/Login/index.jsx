@@ -20,7 +20,6 @@ import * as yup from 'yup';
 import { useAuth } from "../../context/AuthContext";
 
 const Login = () => {
-    const navigate = useNavigate();
     const { login } = useAuth();
 
     const validationPost = yup.object().shape({
