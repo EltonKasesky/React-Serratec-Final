@@ -11,7 +11,7 @@ import UnauthorizedPage from "../pages/Unauthorized";
 import Posts from "../pages/Posts";
 import Update from "../pages/Update";
 import More from "../pages/More";
-import Feed from "../pages/Feed";
+// import Feed from "../pages/Feed";
 
 
 export default function AppRouter() {
@@ -42,7 +42,7 @@ export default function AppRouter() {
             <Route path="*" element={<ErrorPage />}></Route>
 
         <Route path={"/posts"} element={<Posts />}></Route>
-        <Route path={"/feed"} element={<Feed />}></Route>
+        {/* <Route path={"/feed"} element={<Feed />}></Route> */}
         <Route path={"/update/:id"} element={<Update />}></Route>
         <Route path={"/more/:id"} element={<More />}></Route>
 
