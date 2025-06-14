@@ -8,6 +8,11 @@ import AdminPage from "../pages/Admin";
 import { Route, Routes } from 'react-router-dom'
 import PrivateRoute from "./PrivateRoute";
 import UnauthorizedPage from "../pages/Unauthorized";
+import Posts from "../pages/Posts";
+import Update from "../pages/Update";
+import More from "../pages/More";
+import Feed from "../pages/Feed";
+
 
 export default function AppRouter() {
     return (
@@ -27,6 +32,14 @@ export default function AppRouter() {
                 }
             />
             <Route path="*" element={<ErrorPage />}></Route>
+
+        <Route path={"/posts"} element={<Posts />}></Route>
+        <Route path={"/feed"} element={<Feed />}></Route>
+        <Route path={"/update/:id"} element={<Update />}></Route>
+        <Route path={"/more/:id"} element={<More />}></Route>
+
+
+
         </Routes>
     )
 }

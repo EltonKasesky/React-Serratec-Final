@@ -6,6 +6,7 @@ const AdminPage = () => {
         <>
             <Header />
             <Admin />
+            
         </>
     );
 }
