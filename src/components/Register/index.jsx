@@ -10,10 +10,38 @@ import {
 } from "react-icons/md";
 import { TbLockFilled } from "react-icons/tb";
 import { HiIdentification } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Copyright from "../Copyright";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import * as yup from "yup"
 
 const Register = () => {
+    const validationPost = yup.object().shape({
+        nome: yup.string().required("O nome deve ser preenchido"),
+        telefone: yup.string().required("O telefone deve ser preenchido"),
+        cpf: yup.string().required("O CPF deve ser preenchido"),
+        cep: yup.string().required("O CEP deve ser preenchido"),
+        email: yup.string().email("Email inválido").required("O email deve ser preenchido"),
+        senha: yup.string().required("A senha deve ser preenchida"),
+    });
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({ resolver: yupResolver(validationPost) });
+
+    const registerUser = (data) => {
+        axios.post("http://localhost:8080/clientes", data)
+            .then(() => {
+                useNavigate("/login")
+            }).catch((error) => {
+                console.error("Erro ao enviar requisição: ", error)
+            })
+    }
+
     return (
         <main className={`${styles.container} ${styles.themeLocal}`}>
             <div className={styles.primarySection}>
@@ -23,27 +51,31 @@ const Register = () => {
                     </Link>
                     <h1>Fazer Registro</h1>
                     <div className={styles.contentForm}>
-                        <form>
+                        <form onSubmit={handleSubmit(registerUser)}>
                             <div className={styles.inputForm}>
                                 <IoPersonSharp className={styles.icon} />
                                 <input
                                     type="text"
-                                    name="name"
-                                    id="name"
+                                    name="nome"
+                                    id="nome"
                                     placeholder="Seu nome..."
+                                    {...register('nome')}
                                     required
                                 />
+                                <p className={yup.errorMessage}>{errors.nome?.message}</p>
                             </div>
 
                             <div className={styles.inputForm}>
                                 <MdPermPhoneMsg className={styles.icon} />
                                 <input
                                     type="tel"
-                                    name="tel"
-                                    id="tel"
+                                    name="telefone"
+                                    id="telefone"
                                     placeholder="Seu telefone. Ex: (xx)xxxxx-xxxx"
+                                    {...register('telefone')}
                                     required
                                 />
+                                <p className={yup.errorMessage}>{errors.telefone?.message}</p>
                             </div>
 
                             <div className={styles.inputForm}>
@@ -52,11 +84,24 @@ const Register = () => {
                                     type="text"
                                     name="cpf"
                                     id="cpf"
-                                    pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-                                    title="Digite um CPF no formato: xxx.xxx.xxx-xx"
                                     placeholder="Seu CPF. Ex: xxx.xxx.xxx-xx"
+                                    {...register('cpf')}
                                     required
                                 />
+                                <p className={yup.errorMessage}>{errors.cpf?.message}</p>
+                            </div>
+
+                            <div className={styles.inputForm}>
+                                <HiIdentification className={styles.icon} />
+                                <input
+                                    type="text"
+                                    name="cep"
+                                    id="cep"
+                                    placeholder="Seu CEP. Ex: xxxxx-xxx"
+                                    {...register('cep')}
+                                    required
+                                />
+                                <p className={yup.errorMessage}>{errors.cep?.message}</p>
                             </div>
 
                             <div className={styles.inputForm}>
@@ -66,19 +111,23 @@ const Register = () => {
                                     name="email"
                                     id="email"
                                     placeholder="Seu email. Ex: farmacia@gmail.com"
+                                    {...register('email')}
                                     required
                                 />
+                                <p className={yup.errorMessage}>{errors.email?.message}</p>
                             </div>
 
                             <div className={styles.inputForm}>
                                 <TbLockFilled className={styles.icon} />
                                 <input
                                     type="password"
-                                    name="password"
-                                    id="password"
+                                    name="senha"
+                                    id="senha"
                                     placeholder="Sua senha..."
+                                    {...register('senha')}
                                     required
                                 />
+                                <p className={yup.errorMessage}>{errors.senha?.message}</p>
                             </div>
 
                             <button className={styles.btn} type="submit">Registrar</button>
@@ -94,7 +143,7 @@ const Register = () => {
                     <div className={styles.loginImage}></div>
                 </section>
             </div>
-            <Copyright/>
+            <Copyright />
         </main>
     );
 };

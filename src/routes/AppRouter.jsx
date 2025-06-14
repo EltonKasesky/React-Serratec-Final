@@ -26,6 +26,14 @@ export default function AppRouter() {
                     </PrivateRoute>
                 }
             />
+            <Route
+                path="/admin-clientes"
+                element={
+                    <PrivateRoute roles={["ROLE_ADMIN"]}>
+                        <ClientesPage />
+                    </PrivateRoute>
+                }
+            />
             <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
     )

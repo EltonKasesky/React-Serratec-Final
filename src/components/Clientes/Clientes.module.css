@@ -1,0 +1,245 @@
+.themeLocal {
+    --bg-main-light: #ffffff;
+    --bg-secondary-light: #f9fafb;
+    --border-color: #e5e7eb;
+    --text-light: #374151;
+    --text-accent: #1d4ed8;
+    --button-text-light: #fff;
+    --card-radius: 12px;
+    --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 40px 20px;
+    background-color: var(--bg-secondary-light);
+    animation: fadeIn 0.4s ease-in;
+}
+
+.categoryTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-light);
+    border-left: 4px solid var(--text-accent);
+    padding-left: 12px;
+    align-self: flex-start;
+    max-width: 90%;
+}
+
+.filtroContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    align-self: flex-start;
+    max-width: 90%;
+}
+
+.filtroContainer button {
+    padding: 10px 20px;
+    background-color: var(--text-accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(33, 52, 155, 0.2);
+}
+
+.filtroContainer button:hover,
+.filtroContainer .active {
+    background-color: #facc15;
+    color: var(--text-accent);
+    transform: translateY(-2px);
+}
+
+.contentProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 90%;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    background-color: var(--bg-main-light);
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-default);
+    padding: 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-color);
+}
+
+.product h3 {
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    color: var(--text-accent);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 28px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 100%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.4s ease;
+}
+
+.modal h3 {
+    color: var(--text-accent);
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.modalButtons button {
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modalButtons button:first-child {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.modalButtons button:last-child {
+    background-color: var(--text-accent);
+    color: #fff;
+}
+
+.modalButtons button:hover {
+    opacity: 0.85;
+}
+
+.formUpdate {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.formUpdate input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease;
+}
+
+.formUpdate input:focus {
+    border-color: var(--text-accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(33, 52, 155, 0.15);
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.actions button {
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--button-text-light);
+    background-color: var(--text-accent);
+    border: 1px solid var(--text-accent);
+}
+
+.actions button:hover {
+    color: var(--text-accent);
+    background-color: var(--bg-main-light);
+}
+
+.actions .edit {
+    background: #1d4ed8;
+    color: #fff;
+}
+
+.actions .edit:hover {
+    background: #2563eb;
+}
+
+.actions .delete {
+    background: crimson;
+    color: white;
+}
+
+.actions .delete:hover {
+    background: darkred;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
