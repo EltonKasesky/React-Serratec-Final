@@ -11,6 +11,8 @@ const Admin = () => {
                     </Link>
                 </div>
             </div>
+            <h1>Painel de Admin</h1>
+            <Link to={"/admin-clientes"}>Gerenciar Clientes</Link>
         </>
     );
 }
