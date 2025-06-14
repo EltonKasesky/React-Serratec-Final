@@ -33,7 +33,7 @@ const validationPost = yup.object().shape({
 export default function Update() {
   
   const { id } = useParams();
-
+  const token = localStorage.getItem('token');
 
   let navigate = useNavigate();
   const {
@@ -56,10 +56,12 @@ export default function Update() {
 
   const addPost = (data) =>
     axios
-      .put(`http://localhost:8080/produtos/${id}`, data)
+      .put(`http://localhost:8080/produtos/${id}`, data,{
+      headers:{Authorization:`Bearer ${token}`}
+    })
       .then(() => {
         console.log("Deu certo");
-        navigate("/");
+        navigate("/produtos");
       })
       .catch(() => console.error("Deu errado"));
 

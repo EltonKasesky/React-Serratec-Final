@@ -1,0 +1,98 @@
+.themeLocal {
+  --bg-main-light: #fff;
+  --bg-secondary-light: #f7f7f7;
+  --border-color: #ddd;
+  --text-light: #333;
+  --text-accent: #21349b;
+  --card-radius: 12px;
+  --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --buy-bg-light: #21349b;
+  --buy-text-light: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+  background-color: var(--bg-secondary-light);
+}
+
+.main {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--bg-main-light);
+  padding: 30px 25px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-default);
+  transition: box-shadow 0.3s ease;
+}
+
+.main:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-accent);
+  margin-bottom: 16px;
+  border-left: 4px solid var(--text-accent);
+  padding-left: 12px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-light);
+}
+
+.formGroup input {
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border-color);
+  font-size: 1rem;
+  color: var(--text-light);
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus {
+  border-color: var(--text-accent);
+  outline: none;
+  box-shadow: 0 0 5px var(--text-accent);
+}
+
+.errorMsg {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #d32f2f; /* vermelho erro */
+  font-weight: 500;
+  min-height: 18px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: 1.5px solid var(--buy-bg-light);
+  background-color: var(--buy-bg-light);
+  color: var(--buy-text-light);
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: transparent;
+  color: var(--text-accent);
+  border-color: var(--text-accent);
+}
