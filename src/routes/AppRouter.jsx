@@ -6,6 +6,8 @@ import ProdutosPage from "../pages/Produtos";
 import ClientesPage from "../pages/Clientes";
 import AdminPage from "../pages/Admin";
 import { Route, Routes } from 'react-router-dom'
+import PrivateRoute from "./PrivateRoute";
+import UnauthorizedPage from "../pages/Unauthorized";
 
 export default function AppRouter() {
     return (
@@ -15,7 +17,15 @@ export default function AppRouter() {
             <Route path="/register" element={<RegisterPage />}></Route>
             <Route path="/produtos" element={<ProdutosPage />}></Route>
             <Route path="/clientes" element={<ClientesPage />}></Route>
-            <Route path="/admin" element={<AdminPage />}></Route>
+            <Route path="/unauthorized" element={<UnauthorizedPage />} />
+            <Route
+                path="/admin"
+                element={
+                    <PrivateRoute roles={["ROLE_ADMIN"]}>
+                        <AdminPage />
+                    </PrivateRoute>
+                }
+            />
             <Route path="*" element={<ErrorPage />}></Route>
         </Routes>
     )
