@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }) => {
     try {
       const decoded = jwtDecode(token);
       setUserInfo(decoded);
-      console.log(decoded);
     } catch (error) {
       console.error("Token JWT inválido:", error);
       logout();

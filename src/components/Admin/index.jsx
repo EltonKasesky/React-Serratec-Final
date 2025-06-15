@@ -1,18 +1,22 @@
 import { Link } from "react-router-dom";
+import * as styles from './Admin.module.css';
+import { useAuth } from "../../context/AuthContext";
 
 const Admin = () => {
+    const { userInfo } = useAuth();
+
     return (
         <>
-            <h1>Admin</h1>
-            <div>
-              <div >
-                    <Link to={"/posts"}>
-                        <button>Cadastro de Produtos</button>
-                    </Link>
-                </div>
-            </div>
-            <h1>Painel de Admin</h1>
-            <Link to={"/admin-clientes"}>Gerenciar Clientes</Link>
+            <section className={`${styles.contentLinks} ${styles.themeLocal}`}>
+                <h1>Painel de Admin</h1>
+                <p>Email do Admin: {userInfo.sub}</p>
+                <Link to={"/posts"}>
+                    <p>Cadastro de produtos</p>
+                </Link>
+                <Link to={"/admin-clientes"}>
+                    <p>Gerenciar Clientes</p>
+                </Link>
+            </section>
         </>
     );
 }

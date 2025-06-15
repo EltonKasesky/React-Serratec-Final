@@ -11,8 +11,6 @@ import UnauthorizedPage from "../pages/Unauthorized";
 import Posts from "../pages/Posts";
 import Update from "../pages/Update";
 import More from "../pages/More";
-// import Feed from "../pages/Feed";
-
 
 export default function AppRouter() {
     return (
@@ -20,8 +18,6 @@ export default function AppRouter() {
             <Route path="/" element={<HomePage />}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/register" element={<RegisterPage />}></Route>
-            <Route path="/produtos" element={<ProdutosPage />}></Route>
-            <Route path="/clientes" element={<ClientesPage />}></Route>
             <Route path="/unauthorized" element={<UnauthorizedPage />} />
             <Route
                 path="/admin"
@@ -39,15 +35,19 @@ export default function AppRouter() {
                     </PrivateRoute>
                 }
             />
+            <Route
+                path="/admin-produtos"
+                element={
+                    <PrivateRoute roles={["ROLE_ADMIN"]}>
+                        <ProdutosPage />
+                    </PrivateRoute>
+                }
+            />
             <Route path="*" element={<ErrorPage />}></Route>
 
-        <Route path={"/posts"} element={<Posts />}></Route>
-        {/* <Route path={"/feed"} element={<Feed />}></Route> */}
-        <Route path={"/update/:id"} element={<Update />}></Route>
-        <Route path={"/more/:id"} element={<More />}></Route>
-
-
-
+            <Route path={"/posts"} element={<Posts />}></Route>
+            <Route path={"/update/:id"} element={<Update />}></Route>
+            <Route path={"/more/:id"} element={<More />}></Route>
         </Routes>
     )
 }
