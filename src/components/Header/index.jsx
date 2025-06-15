@@ -8,112 +8,115 @@ import { useAuth } from "../../context/AuthContext";
 import { CgDarkMode } from "react-icons/cg";
 
 const Header = () => {
-  const { isAuthenticated, logout, userInfo } = useAuth();
-  const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isAdmin = userInfo?.roles?.includes("ROLE_ADMIN");
+    const { isAuthenticated, logout, userInfo } = useAuth();
+    const navigate = useNavigate();
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const isAdmin = userInfo?.roles?.includes("ROLE_ADMIN");
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
 
-  const handleLogout = () => {
-    logout();
-    closeMenu();
-    navigate("/");
-  };
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
+    const handleLogout = () => {
+        logout();
+        closeMenu();
+        navigate("/");
     };
-  }, [isMenuOpen]);
 
-  return (
-    <header className={styles.navHeader}>
-      <Link to="/" onClick={closeMenu}>
-        <img src="/images/logo/logo.jpg" alt="Logo" className={styles.logo} />
-      </Link>
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+        return () => {
+            document.body.style.overflow = "unset";
+        };
+    }, [isMenuOpen]);
 
-      <nav className={styles.menu}>
-        <ul
-          className={`${styles.navLinks} ${
-            isMenuOpen ? styles.navLinksOpen : ""
-          }`}
-        >
-          {isAuthenticated && isAdmin && (
-            <li>
-              <Link
-                to={"/admin"}
-                className={styles.navItem}
-                onClick={closeMenu}
-              >
-                Admin
-              </Link>
-            </li>
-          )}
-          <li>
-            <Link to={"/"} className={styles.navItem} onClick={closeMenu}>
-              Home
+    return (
+        <header className={styles.navHeader}>
+            <Link to="/" onClick={closeMenu}>
+                <img src="/images/logo/logo.jpg" alt="Logo" className={styles.logo} />
             </Link>
-          </li>
-          <li>
-            <Link
-              to={"/clientes"}
-              className={styles.navItem}
-              onClick={closeMenu}
+
+            <nav className={styles.menu}>
+                <ul
+                    className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ""
+                        }`}
+                >
+                    {isAuthenticated && isAdmin && (
+                        <li>
+                            <Link
+                                to={"/admin"}
+                                className={styles.navItem}
+                                onClick={closeMenu}
+                            >
+                                Admin
+                            </Link>
+                        </li>
+                    )}
+                    <li>
+                        <Link to={"/"} className={styles.navItem} onClick={closeMenu}>
+                            Home
+                        </Link>
+                    </li>
+                    {isAuthenticated && isAdmin && (
+                        <li>
+                            <Link
+                                to={"/admin-clientes"}
+                                className={styles.navItem}
+                                onClick={closeMenu}
+                            >
+                                Clientes
+                            </Link>
+                        </li>
+                    )}
+                    {isAuthenticated && isAdmin && (
+                        <li>
+                            <Link
+                                to={"/admin-produtos"}
+                                className={styles.navItem}
+                                onClick={closeMenu}
+                            >
+                                Produtos
+                            </Link>
+                        </li>
+                    )}
+                    <li>
+                        {isAuthenticated ? (
+                            <button onClick={handleLogout} className={styles.navButton}>
+                                Logout <TbLogin />
+                            </button>
+                        ) : (
+                            <Link
+                                to={"/login"}
+                                className={styles.navItem}
+                                onClick={closeMenu}
+                            >
+                                Login <BiLogIn />
+                            </Link>
+                        )}
+                    </li>
+
+                    <li>
+                        <button className={styles.navButton} onClick={() => { }}>
+                            <CgDarkMode size={20} style={{ marginRight: "8px" }} />
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <button
+                className={styles.hamburgerButton}
+                onClick={toggleMenu}
+                aria-controls="primary-navigation"
+                aria-expanded={isMenuOpen}
             >
-              Clientes
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={"/produtos"}
-              className={styles.navItem}
-              onClick={closeMenu}
-            >
-              Produtos
-            </Link>
-          </li>
-          <li>
-            {isAuthenticated ? (
-              <button onClick={handleLogout} className={styles.navButton}>
-                Logout <TbLogin />
-              </button>
-            ) : (
-              <Link
-                to={"/login"}
-                className={styles.navItem}
-                onClick={closeMenu}
-              >
-                Login <BiLogIn />
-              </Link>
-            )}
-          </li>
-
-          <li>
-            <button className={styles.navButton} onClick={() => {}}>
-              <CgDarkMode size={20} style={{ marginRight: "8px" }} />
+                {isMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
+                <span className={styles.visuallyHidden}>Menu</span>
             </button>
-          </li>
-        </ul>
-      </nav>
-
-      <button
-        className={styles.hamburgerButton}
-        onClick={toggleMenu}
-        aria-controls="primary-navigation"
-        aria-expanded={isMenuOpen}
-      >
-        {isMenuOpen ? <FiX size={28} /> : <FiMenu size={28} />}
-        <span className={styles.visuallyHidden}>Menu</span>
-      </button>
-    </header>
-  );
+        </header>
+    );
 };
 
 export default Header;

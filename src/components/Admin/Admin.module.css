@@ -1,0 +1,32 @@
+.themeLocal {
+    --bg-link-light: #21349b;
+    --bg-link-light-hover: #fff;
+    --text-light: #fff;
+    --text-link-light-hover: #21349b;
+}
+
+.contentLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    margin: 30px 20px;
+}
+
+.contentLinks a {
+    max-width: fit-content;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 1px solid var(--bg-link-light);
+    color: var(--text-light);
+    background-color: var(--bg-link-light);
+}
+
+.contentLinks a:hover {
+    background-color: var(--bg-link-light-hover);
+    color: var(--text-link-light-hover);
+}
