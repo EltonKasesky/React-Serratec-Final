@@ -61,7 +61,7 @@ export default function Posts() {
       })
       .then(() => {
         console.log("Produto cadastrado com sucesso");
-        navigate("/");
+        navigate("/admin-produtos");
       })
       .catch((err) => {
         console.error("Erro ao cadastrar produto:", err.response?.data || err.message);

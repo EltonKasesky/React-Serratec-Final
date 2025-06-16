@@ -103,6 +103,23 @@
   border-color: #e04343;
 }
 
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+
+}
+
+.searchInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
 
 @media (max-width: 960px) {
   .feedWrapper {

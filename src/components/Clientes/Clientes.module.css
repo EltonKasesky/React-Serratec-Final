@@ -16,7 +16,11 @@
     align-items: center;
     width: 100%;
     padding: 40px 20px;
-    background-color: var(--bg-secondary-light);
+    background-color: var(--bg-secondary-light); 
+    background-image: url('../../assets/backproduto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     animation: fadeIn 0.4s ease-in;
 }
 
