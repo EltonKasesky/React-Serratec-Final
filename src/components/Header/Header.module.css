@@ -135,3 +135,39 @@
         color: #ffd200;
     }
 }
+
+/* 🌙 Estilo para o modo Dark */
+:global(.dark) .navHeader {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+:global(.dark) .navItem,
+:global(.dark) .navButton {
+    color: #f5f5f5;
+}
+
+:global(.dark) .navItem:hover,
+:global(.dark) .navButton:hover {
+    color: #ffd200;
+}
+
+:global(.dark) .navItem::after,
+:global(.dark) .navButton::after {
+    background-color: #ffd200;
+}
+
+:global(.dark) .hamburgerButton {
+    color: #ffd200;
+}
+
+@media (max-width: 768px) {
+    :global(.dark) .navLinks {
+        background-color: rgba(18, 18, 18, 0.95);
+    }
+
+    :global(.dark) .navItem,
+    :global(.dark) .navButton {
+        color: #f5f5f5;
+    }
+}
