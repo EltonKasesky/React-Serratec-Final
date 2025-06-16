@@ -59,3 +59,15 @@
     background-color: #121212;
     color: white;
 }
+
+:global(html.dark) h1 {
+    color:#121;
+}
+
+:global(html.dark) email {
+    color:black;
+}
+
+:global(html.dark) email {
+    color:black;
+}
