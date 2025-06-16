@@ -7,6 +7,7 @@ import { useTheme } from "../../context/ThemeContext";
 const Produtos = () => {
   const [posts, setPosts] = useState([]);
   const [busca, setBusca] = useState("");
+
   useEffect(() => {
     axios
       .get("http://localhost:8080/produtos")
@@ -37,11 +38,27 @@ const Produtos = () => {
       );
   }
 
+  
+  const postsFiltrados = posts.filter((post) =>
+    post.nome.toLowerCase().includes(busca.toLowerCase())
+  );
+
   return (
     <div className={styles.themeLocal}>
+        <div className={styles.searchBar}>
+          <input
+            type="text"
+            placeholder="Buscar produto..."
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
+            className={styles.searchInput}
+          />
+        </div>
       <div className={styles.container}>
+       
+
         <div className={styles.feedWrapper}>
-          {posts.map((post) => (
+          {postsFiltrados.map((post) => (
             <div className={styles.card} key={post.id}>
               <header className={styles.cardHeader}>
                 <h2>{post.nome}</h2>

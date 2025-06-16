@@ -39,9 +39,9 @@ export default function Update() {
         const produto = response.data;
 
         reset({
-          nome: produto.nomeProduto,
-          descricao: produto.descricaoProduto,
-          preco: produto.precoProduto,
+          nome: produto.nome,
+          descricao: produto.descricao,
+          preco: produto.preco,
           estoque: produto.estoque,
           validade: produto.validade,
           categoria: produto.categoria
