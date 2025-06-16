@@ -1,98 +1,143 @@
-.themeLocal {
+:root {
   --bg-main-light: #fff;
   --bg-secondary-light: #f7f7f7;
-  --border-color: #ddd;
-  --text-light: #333;
-  --text-accent: #21349b;
-  --card-radius: 12px;
-  --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
-  --buy-bg-light: #21349b;
-  --buy-text-light: #fff;
+  --border-light: #21349b;
+  --text-light: #21349b;
+  --main-light: #21349b;
+  --input-border-light: #808080;
+  --input-text-light: #303030;
+  --input-icon-active: #43E043;
+  --btn-bg-light: #21349b;
+  --btn-text-light: #fff;
+  --btn-bg-light-hover: #fff;
+  --btn-text-light-hover: #21349b;
+  --user-text-light: #303030;
 }
 
 .container {
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  width: 100%;
-  padding: 40px 20px;
   background-color: var(--bg-secondary-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 20px 20px;
 }
 
 .main {
-  width: 100%;
-  max-width: 600px;
   background-color: var(--bg-main-light);
-  padding: 30px 25px;
-  border-radius: var(--card-radius);
-  box-shadow: var(--shadow-default);
-  transition: box-shadow 0.3s ease;
-}
-
-.main:hover {
-  box-shadow: var(--shadow-hover);
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(33, 52, 155, 0.25);
+  max-width: 650px;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--text-accent);
-  margin-bottom: 16px;
-  border-left: 4px solid var(--text-accent);
-  padding-left: 12px;
+  color: var(--main-light);
+  font-weight: 700;
+  font-size: 1.9rem;
+  text-align: center;
+  margin-bottom: 6px;
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .formGroup label {
   font-weight: 600;
-  margin-bottom: 6px;
   color: var(--text-light);
+  margin-bottom: 6px;
 }
 
 .formGroup input {
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1.5px solid var(--border-color);
+  border: none;
+  border-bottom: 2px solid var(--input-border-light);
+  padding: 6px 6px;
   font-size: 1rem;
-  color: var(--text-light);
+  color: var(--input-text-light);
+  outline: none;
   transition: border-color 0.3s ease;
 }
 
 .formGroup input:focus {
-  border-color: var(--text-accent);
-  outline: none;
-  box-shadow: 0 0 5px var(--text-accent);
+  border-bottom-color: var(--main-light);
 }
 
 .errorMsg {
-  margin-top: 4px;
+  color: #e04343;
   font-size: 0.85rem;
-  color: #d32f2f; /* vermelho erro */
-  font-weight: 500;
+  margin-top: 4px;
   min-height: 18px;
 }
 
 .submitButton {
-  width: 100%;
-  padding: 12px 0;
-  border-radius: 8px;
+  background-color: var(--btn-bg-light);
+  color: var(--btn-text-light);
   font-weight: 700;
   font-size: 1.1rem;
+  padding: 12px 0;
+  border: 2px solid var(--btn-bg-light);
+  border-radius: 6px;
   cursor: pointer;
-  border: 1.5px solid var(--buy-bg-light);
-  background-color: var(--buy-bg-light);
-  color: var(--buy-text-light);
+  width: 100%;
   transition: all 0.3s ease;
 }
 
 .submitButton:hover {
-  background-color: transparent;
-  color: var(--text-accent);
-  border-color: var(--text-accent);
+  background-color: var(--btn-bg-light-hover);
+  color: var(--btn-text-light-hover);
+  border-color: var(--btn-bg-light-hover);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+  .main {
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .submitButton {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  .formGroup input {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .submitButton {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .formGroup input {
+    font-size: 0.9rem;
+    padding: 6px 4px;
+  }
+}
+
+.dark ._container_13fx7_27 {
+       background-color: #292929;
 }

@@ -3,8 +3,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import * as styles from '../Posts/Posts.module.css';
-
+import styles from './Posts.module.css';
+import Footer from "../../components/Footer/footer";
+import Header from "../../components/Header";
 
 const validationPost = yup.object().shape({
   nome: yup
@@ -17,23 +18,26 @@ const validationPost = yup.object().shape({
     .max(150, "Tamanho máximo permitido"),
   preco: yup
     .number()
-    .required("O conteúdo tem que ser preenchido"),
+    .typeError("Insira um número válido")
+    .required("O preço tem que ser preenchido"),
   estoque: yup
     .number()
-    .required("O conteúdo tem que ser preenchido")
-    .max(500, "Tamanho máximo permitido"),
+    .typeError("Insira um número válido")
+    .required("O estoque tem que ser preenchido")
+    .max(500, "Máximo de 500 unidades"),
   validade: yup
     .date()
-    .required("O conteúdo tem que ser preenchido"),
+    .typeError("Insira uma data válida")
+    .required("A validade tem que ser preenchida"),
   categoria: yup
     .string()
-    .required("O conteúdo tem que ser preenchido")
-    .max(500, "Tamanho máximo permitido"),    
+    .required("A categoria tem que ser preenchida")
+    .max(100, "Máximo de 100 caracteres"),
 });
 
 export default function Posts() {
-  let navigate = useNavigate();
-  const token = localStorage.getItem('token');
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
 
   const {
     register,
@@ -41,22 +45,20 @@ export default function Posts() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(validationPost) });
 
-
   const addPost = (data) => {
     const produtoDTO = {
       nomeProduto: data.nome,
       descricaoProduto: data.descricao,
       precoProduto: parseFloat(data.preco),
       estoque: parseInt(data.estoque),
-      validade: data.validade, 
-      categoria: data.categoria
+      validade: data.validade,
+      categoria: data.categoria,
     };
-  
-  
+
     axios
-    .post(`http://localhost:8080/produtos`, produtoDTO,{
-      headers:{Authorization:`Bearer ${token}`}
-    })
+      .post("http://localhost:8080/produtos", produtoDTO, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then(() => {
         console.log("Produto cadastrado com sucesso");
         navigate("/");
@@ -65,13 +67,13 @@ export default function Posts() {
         console.error("Erro ao cadastrar produto:", err.response?.data || err.message);
       });
   };
-  
+
   return (
-    <div className={styles.themeLocal}>
-      <main className={styles.main}>
-        <div className={styles.container}>
+    <>
+      <Header /> {/* Agora aparece o header no topo */}
+      <div className={styles.container}>
+        <div className={styles.main}>
           <h1 className={styles.title}>Cadastrar Produto</h1>
-          <hr />
           <form onSubmit={handleSubmit(addPost)}>
             <div className={styles.formGroup}>
               <label htmlFor="nome">Produto</label>
@@ -87,7 +89,7 @@ export default function Posts() {
 
             <div className={styles.formGroup}>
               <label htmlFor="preco">Preço</label>
-              <input type="number" id="preco" {...register("preco")} />
+              <input type="number" id="preco" step="0.01" {...register("preco")} />
               <p className={styles.errorMsg}>{errors.preco?.message}</p>
             </div>
 
@@ -114,7 +116,8 @@ export default function Posts() {
             </button>
           </form>
         </div>
-      </main>
-    </div>
+      </div>
+      <Footer /> {/* Agora aparece o footer no final */}
+    </>
   );
 }
