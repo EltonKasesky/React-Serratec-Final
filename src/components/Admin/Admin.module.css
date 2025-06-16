@@ -1,73 +1,73 @@
 .themeLocal {
-    --bg-link-light: #21349b;
-    --bg-link-light-hover: #fff;
-    --text-light: #fff;
-    --text-link-light-hover: #21349b;
+  --bg-link-light: #21349b;
+  --bg-link-light-hover: #fff;
+  --text-light: #fff;
+  --text-link-light-hover: #21349b;
 }
 :global(html.dark) .themeLocal {
-    --bg-link-light: #21349b;
-    --bg-link-light-hover: #fff;
-    --text-light: #fff;
-    --text-link-light-hover: #cdcdcd;
+  --bg-link-light: #21349b;
+  --bg-link-light-hover: #fff;
+  --text-light: #fff;
+  --text-link-light-hover: #cdcdcd;
 }
 .container {
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--bg-secondary-light); 
-    background-image: url('../../assets/backproduto.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--bg-secondary-light);
+  background-image: url("../../assets/backproduto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 30px;
+  min-height: 100vh;
+}
 
 .contentLinks {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-    margin: 30px 20px;
-    
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  margin: 30px 20px;
 }
 
 .contentLinks a {
-    max-width: fit-content;
-    padding: 5px 10px;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-    font-size: 1rem;
-    font-weight: 500;
-    border: 1px solid var(--bg-link-light);
-    color: var(--text-light);
-    background-color: var(--bg-link-light);
+  max-width: fit-content;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid var(--bg-link-light);
+  color: var(--text-light);
+  background-color: var(--bg-link-light);
 }
 
 .contentLinks a:hover {
-    background-color: var(--bg-link-light-hover);
-    color: var(--text-link-light-hover);
+  background-color: var(--bg-link-light-hover);
+  color: var(--text-link-light-hover);
 }
 
 :global(html.dark) {
-    background-color: #121212;
-    color: white;
+  background-color: #121212;
+  color: white;
 }
 
 :global(html.dark) body {
-    background-color: #121212;
-    color: white;
+  background-color: #121212;
+  color: rgb(0, 0, 0);
 }
 
 :global(html.dark) h1 {
-    color:#121;
+  color: #121;
 }
 
 :global(html.dark) email {
-    color:black;
+  color: black;
 }
 
 :global(html.dark) email {
-    color:black;
+  color: black;
 }

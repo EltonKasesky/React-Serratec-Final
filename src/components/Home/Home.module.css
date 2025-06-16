@@ -18,118 +18,121 @@
   width: 100%;
   padding: 40px 20px;
   background-color: var(--bg-secondary-light);
+  background-image: url("../../assets/backproduto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 30px;
+  min-height: 100vh;
 }
 
 :global(html.dark) .container {
-    background-color: #3a3a3a;
-    
-  }
-
-
-.categorySection {
-    width: 100%;
-    max-width: 90%;
-    margin-bottom: 48px;
+  background-color: #3a3a3a;
 }
 
+.categorySection {
+  width: 100%;
+  max-width: 90%;
+  margin-bottom: 48px;
+}
 
 .categoryTitle {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 24px;
-    color: var(--text-light);
-    border-left: 4px solid var(--text-accent);
-    padding-left: 12px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-light);
+  border-left: 4px solid var(--text-accent);
+  padding-left: 12px;
 }
 
 :global(html.dark) .categoryTitle {
-    color:#DCDCDC;
-        border-left: 4px solid #555555;
+  color: var(--text-light);
+  border-left: 4px solid #555555;
 }
 
 .contentProducts {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
 }
 
 .product {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 10px;
-    height: 100%;
-    background-color: var(--bg-main-light);
-    border-radius: var(--card-radius);
-    box-shadow: var(--shadow-default);
-    padding: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  height: 100%;
+  background-color: var(--bg-main-light);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-default);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid transparent;
 }
 
 :global(html.dark) .product {
- background-color: #292929;
-    box-shadow: var(--shadow-hover);
-    border-color: var(--border-color);
+  background-color: #292929;
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-color);
 }
 
 .product:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-hover);
-    border-color: var(--border-color);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-color);
 }
 
 .product h3 {
-    text-align: center;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 1.2rem;
-    color: var(--text-accent);
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 1.2rem;
+  color: var(--text-accent);
 }
 
 :global(html.dark) .product h3 {
-    color:#DCDCDC;
+  color: #dcdcdc;
 }
 
 .productInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 12px;
-    color: var(--text-light);
-    font-size: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--text-light);
+  font-size: 0.95rem;
 }
 
-:global(html.dark) .productInfo  {
-    color:#DCDCDC;
+:global(html.dark) .productInfo {
+  color: #dcdcdc;
 }
 
 .buyContent {
-    border-top: 1px solid var(--border-color);
-    padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
 }
 
 .buyButton {
-    width: 100%;
-    padding: 5px 3px;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    border: 1px solid var(--buy-bg-light);
-    background-color: var(--buy-bg-light);
-    color: var(--buy-text-light);
+  width: 100%;
+  padding: 5px 3px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--buy-bg-light);
+  background-color: var(--buy-bg-light);
+  color: var(--buy-text-light);
 }
 
 .buyButton:hover {
-    border: 1px solid var(--buy-bg-light);
-    background-color: transparent;
-    color: var(--text-accent);
+  border: 1px solid var(--buy-bg-light);
+  background-color: transparent;
+  color: var(--text-accent);
 }
 
 :global(html.dark) .buyButton:hover {
-    border: 1px solid var(--buy-bg-light);
-    background-color: #292929;
-    color: #DCDCDC;
+  border: 1px solid var(--buy-bg-light);
+  background-color: #292929;
+  color: #dcdcdc;
 }
