@@ -1,98 +1,117 @@
-
 .themeLocal {
   --bg-main-light: #fff;
   --bg-secondary-light: #f7f7f7;
-  --border-color: #ddd;
-  --text-light: #333;
-  --text-accent: #21349b;
-  --card-radius: 12px;
-  --shadow-default: 0 4px 10px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
-  --buy-bg-light: #21349b;
-  --buy-text-light: #fff;
+  --border-light: #21349b;
+  --text-light: #21349b;
+  --main-light: #21349b;
+  --input-border-light: #808080;
+  --input-text-light: #303030;
+  --input-icon-active: #43E043;
+  --btn-bg-light: #21349b;
+  --btn-text-light: #fff;
+  --btn-bg-light-hover: #fff;
+  --btn-text-light-hover: #21349b;
+  --user-text-light: #303030;
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-secondary-light);
+  padding: 30px;
+  min-height: 100vh;
+}
+
+.feedWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 960px; 
   width: 100%;
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 20px;
+  background-color: var(--bg-main-light);
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px;
 }
 
 .card {
   background-color: var(--bg-main-light);
-  border-radius: var(--card-radius);
-  box-shadow: var(--shadow-default);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid transparent;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--border-color);
-}
-
-.cardHeader {
-  border-bottom: 1px solid var(--border-color);
-  margin-bottom: 12px;
+  transform: scale(1.02);
 }
 
 .cardHeader h2 {
-  font-size: 1.4rem;
-  color: var(--text-accent);
-  margin: 0;
-  padding-bottom: 8px;
+  color: var(--text-light);
+  font-size: 18px;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .cardCategory {
-  color: var(--text-light);
-  font-size: 1rem;
-  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--input-text-light);
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .cardButtons {
   display: flex;
+  flex-direction: column;
   gap: 10px;
-  flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .button {
-  flex: 1;
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  border: 1.5px solid var(--buy-bg-light);
-  background-color: var(--buy-bg-light);
-  color: var(--buy-text-light);
-  transition: all 0.3s ease;
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
   text-align: center;
   text-decoration: none;
-  user-select: none;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--main-light);
+  background-color: var(--btn-bg-light);
+  color: var(--btn-text-light);
+  transition: all 0.2s ease;
 }
 
 .button:hover {
-  background-color: transparent;
-  color: var(--text-accent);
-  border-color: var(--text-accent);
+  background-color: var(--btn-bg-light-hover);
+  color: var(--btn-text-light-hover);
 }
 
 .buttonDelete {
-  border: 1.5px solid #d32f2f;
-  background-color: #d32f2f;
-  color: #fff;
+  background-color: #e04343;
+  border-color: #e04343;
+  color: white;
 }
 
 .buttonDelete:hover {
-  background-color: transparent;
-  color: #d32f2f;
-  border-color: #d32f2f;
+  background-color: #fff;
+  color: #e04343;
+  border-color: #e04343;
+}
+
+
+@media (max-width: 960px) {
+  .feedWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .feedWrapper {
+    grid-template-columns: 1fr;
+  }
 }
