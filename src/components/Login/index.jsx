@@ -24,7 +24,6 @@ const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
 
-    // ✅ Tema escuro aplicado corretamente com React
     useEffect(() => {
         document.documentElement.classList.add('dark');
         return () => {
@@ -32,7 +31,6 @@ const Login = () => {
         };
     }, []);
 
-    // ✅ Validação com Yup
     const validationSchema = yup.object().shape({
         username: yup.string().email("Email inválido").required("O email deve ser preenchido"),
         password: yup.string().required("A senha deve ser preenchida"),
@@ -47,7 +45,7 @@ const Login = () => {
     const loginUser = async (data) => {
         try {
             await login(data.username, data.password);
-            navigate("/dashboard"); // Redireciona após login, ajuste conforme sua rota
+            navigate("/");
         } catch (error) {
             alert("Usuário ou senha inválidos");
         }
