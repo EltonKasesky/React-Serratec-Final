@@ -266,3 +266,6 @@ color:#8DB2E5;
     }
 }
 
+:global(html.dark) .backIcon {
+    color: #fff;
+}
