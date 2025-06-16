@@ -4,10 +4,12 @@
   padding: 2rem 1rem;
   text-align: center;
   width: 100%;
+
   margin-top: auto;
   position: fixed;
   bottom: 0;
 }
+
 
 .dark .footer {
     background-color:#1a1a1a;
