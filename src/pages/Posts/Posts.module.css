@@ -6,7 +6,7 @@
   --main-light: #21349b;
   --input-border-light: #808080;
   --input-text-light: #303030;
-  --input-icon-active: #43E043;
+  --input-icon-active: #43e043;
   --btn-bg-light: #21349b;
   --btn-text-light: #fff;
   --btn-bg-light-hover: #fff;
@@ -16,6 +16,12 @@
 
 .container {
   background-color: var(--bg-secondary-light);
+  background-image: url("../../assets/backproduto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 30px;
+  min-height: 100vh;
   min-height: 83vh;
   display: flex;
   justify-content: center;
@@ -24,7 +30,7 @@
 }
 
 :global(html.dark) .container {
-    background-color: #292929;
+  background-color: #292929;
 }
 
 .main {
@@ -42,7 +48,7 @@
 
 :global(html.dark) .main {
   background-color: #292929;
-   border: 2px solid #808080;
+  border: 2px solid #808080;
 }
 
 .title {
@@ -67,6 +73,11 @@
   font-weight: 600;
   color: var(--text-light);
   margin-bottom: 6px;
+
+}
+
+:global(html.dark) .formGroup input {
+  color: #fff;
 }
 
 :global(html.dark) .formGroup label {
@@ -113,12 +124,10 @@
   border-color: var(--btn-bg-light-hover);
 }
 
-:global(html.dark) 
-.submitButton:hover {
+:global(html.dark) .submitButton:hover {
   background-color: #292929;
-  color: #FFF;
- border: 2px solid #808080;
-
+  color: #fff;
+  border: 2px solid #808080;
 }
 
 /* RESPONSIVIDADE */
@@ -162,4 +171,3 @@
     padding: 6px 4px;
   }
 }
-

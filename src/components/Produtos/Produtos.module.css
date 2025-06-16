@@ -6,7 +6,7 @@
   --main-light: #21349b;
   --input-border-light: #808080;
   --input-text-light: #303030;
-  --input-icon-active: #43E043;
+  --input-icon-active: #43e043;
   --btn-bg-light: #21349b;
   --btn-text-light: #fff;
   --btn-bg-light-hover: #fff;
@@ -18,21 +18,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: var(--bg-secondary-light);
+  background-image: url("../../assets/backproduto.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 30px;
+  min-height: 100vh;
   padding: 30px;
   min-height: 100vh;
 }
 
 :global(html.dark) .container {
   background-color: #3a3a3a;
-
 }
 
 .feedWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 960px; 
+  max-width: 960px;
   width: 100%;
   background-color: var(--bg-main-light);
   border-radius: 10px;
@@ -42,7 +48,6 @@
 
 :global(html.dark) .feedWrapper {
   background-color: #292929;
-
 }
 
 .card {
@@ -58,8 +63,8 @@
 }
 
 :global(html.dark) .card {
-    background-color: #292929;
-     border: 1px solid #DCDCDC;
+  background-color: #292929;
+  border: 1px solid #dcdcdc;
 }
 
 .card:hover {
@@ -73,9 +78,8 @@
   text-align: center;
 }
 
-
 :global(html.dark) .cardHeader h2 {
-  color: #DCDCDC;
+  color: #dcdcdc;
 }
 
 .cardCategory {
@@ -85,9 +89,8 @@
   margin-bottom: 15px;
 }
 
-
 :global(html.dark) .cardCategory {
-  color: #DCDCDC;
+  color: #dcdcdc;
 }
 
 .cardButtons {
@@ -112,11 +115,10 @@
 }
 
 :global(html.dark) .button {
-background-color: #21349B;
-border: #404040;
-color: #8DB2E5;
+  background-color: #21349b;
+  border: #404040;
+  color: #8db2e5;
 }
-
 
 .button:hover {
   background-color: var(--btn-bg-light-hover);
@@ -137,7 +139,6 @@ color: #8DB2E5;
   color: white;
 }
 
-
 .buttonDelete:hover {
   background-color: #fff;
   color: #e04343;
@@ -148,8 +149,9 @@ color: #8DB2E5;
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
-  padding-top: 0.8rem;
-
+  overflow: hidden;
+  background-color: var(--bg-secondary-light);
+  border-radius: 8px;
 }
 
 .searchInput {
@@ -157,39 +159,34 @@ color: #8DB2E5;
   font-size: 1rem;
   width: 100%;
   max-width: 400px;
-  border-radius: 8px;
   border: 1px solid #ccc;
 }
 
 ._themeLocal_76fwu_1 {
-    --bg-main-light: #fff;
-    --bg-secondary-light: #f7f7f7;
-    --border-light: #21349b;
-    --text-light: #21349b;
-    --main-light: #21349b;
-    --input-border-light: #808080;
-    --input-text-light: #303030;
-    --input-icon-active: #43E043;
-    --btn-bg-light: #21349b;
-    --btn-text-light: #fff;
-    --btn-bg-light-hover: #fff;
-    --btn-text-light-hover: #21349b;
-    --user-text-light: #303030;
+  --bg-main-light: #fff;
+  --bg-secondary-light: #f7f7f7;
+  --border-light: #21349b;
+  --text-light: #21349b;
+  --main-light: #21349b;
+  --input-border-light: #808080;
+  --input-text-light: #303030;
+  --input-icon-active: #43e043;
+  --btn-bg-light: #21349b;
+  --btn-text-light: #fff;
+  --btn-bg-light-hover: #fff;
+  --btn-text-light-hover: #21349b;
+  --user-text-light: #303030;
 }
-
 
 :global(html.dark) {
-    .searchBar {
-        background-color: #292929;
-        border-color: #fff;
-    }
+  .searchBar {
+    background-color: #292929;
+    border-color: #fff;
+  }
 }
 :global(html.dark) .themeLocal {
-    background-color: #292929;
+  background-color: #292929;
 }
-
-
-
 
 @media (max-width: 960px) {
   .feedWrapper {

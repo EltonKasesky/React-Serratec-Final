@@ -2,10 +2,6 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import * as styles from "../Produtos/Produtos.module.css";
-import { useTheme } from "../../context/ThemeContext";
-
-document.documentElement.classList.add('dark');
-
 
 const Produtos = () => {
   const [posts, setPosts] = useState([]);
@@ -48,6 +44,8 @@ const Produtos = () => {
 
   return (
     <div className={styles.themeLocal}>
+      <div className={styles.container}>
+       
         <div className={styles.searchBar}>
           <input
             type="text"
@@ -57,8 +55,6 @@ const Produtos = () => {
             className={styles.searchInput}
           />
         </div>
-      <div className={styles.container}>
-       
 
         <div className={styles.feedWrapper}>
           {postsFiltrados.map((post) => (
