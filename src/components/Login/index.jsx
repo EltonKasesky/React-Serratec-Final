@@ -17,19 +17,19 @@ import { TbLockFilled, TbBrandGithubFilled } from "react-icons/tb";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 
 import { useTheme } from "../../context/ThemeContext";
-document.documentElement.setAttribute('native-dark-active', '');
-
 
 const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
+    const { isDarkMode } = useTheme(); // pega estado do dark mode
 
     useEffect(() => {
-        document.documentElement.classList.add('dark');
-        return () => {
-            document.documentElement.classList.remove('dark');
-        };
-    }, []);
+        if (isDarkMode) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [isDarkMode]);
 
     const validationSchema = yup.object().shape({
         username: yup.string().email("Email inválido").required("O email deve ser preenchido"),
@@ -84,7 +84,7 @@ const Login = () => {
                                         type="email"
                                         id="username"
                                         placeholder="Seu email. Ex: farmacia@gmail.com"
-                                        {...register('username')}
+                                        {...register("username")}
                                         required
                                     />
                                     {errors.username && (
@@ -98,7 +98,7 @@ const Login = () => {
                                         type="password"
                                         id="password"
                                         placeholder="Sua senha..."
-                                        {...register('password')}
+                                        {...register("password")}
                                         required
                                     />
                                     {errors.password && (
