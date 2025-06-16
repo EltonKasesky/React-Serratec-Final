@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import * as styles from './Admin.module.css';
 import { useAuth } from "../../context/AuthContext";
 
+document.documentElement.classList.add('dark');
+
 const Admin = () => {
     const { userInfo } = useAuth();
 

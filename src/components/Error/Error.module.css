@@ -17,6 +17,11 @@
     background-color: var(--bg-secondary-light);
 }
 
+:global(html.dark) .container {
+
+    background-color: #292929;
+}
+
 .primarySection {
     display: flex;
     width: 100%;
@@ -26,6 +31,11 @@
     border-radius: 8px;
     box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
     background-color: var(--bg-main-light);
+}
+
+:global(html.dark) .primarySection {
+       background-color: #292929;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 .leftSection,
@@ -70,6 +80,22 @@ img {
     font-weight: 500;
 }
 
+:global(html.dark) .leftTexts {
+color:#fff;
+}
+
+:global(html.dark) .leftTexts p {
+color:#fff;
+}
+
+:global(html.dark) .leftTexts h1 {
+color:#fff;
+}
+
+:global(html.dark) .leftTexts h2 {
+color:#fff;
+}
+
 .backHome a {
     display: flex;
     align-items: center;
@@ -78,6 +104,9 @@ img {
     color: var(--back-light);
 }
 
+:global(html.dark) .backHome a {
+color:#fff;
+}
 .backHome:hover a {
     text-decoration: underline;
 }
@@ -85,6 +114,11 @@ img {
 .icon {
     font-size: 30px;
     color: var(--back-light);
+}
+
+:global(html.dark)  .icon {
+    font-size: 30px;
+ color:#fff;;
 }
 
 .rightImage {

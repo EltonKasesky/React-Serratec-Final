@@ -24,7 +24,7 @@
 }
 
 :global(html.dark) .container {
-  background-color: #292929;
+  background-color: #3a3a3a;
 
 }
 
@@ -160,6 +160,35 @@ color: #8DB2E5;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
+
+._themeLocal_76fwu_1 {
+    --bg-main-light: #fff;
+    --bg-secondary-light: #f7f7f7;
+    --border-light: #21349b;
+    --text-light: #21349b;
+    --main-light: #21349b;
+    --input-border-light: #808080;
+    --input-text-light: #303030;
+    --input-icon-active: #43E043;
+    --btn-bg-light: #21349b;
+    --btn-text-light: #fff;
+    --btn-bg-light-hover: #fff;
+    --btn-text-light-hover: #21349b;
+    --user-text-light: #303030;
+}
+
+
+:global(html.dark) {
+    .searchBar {
+        background-color: #292929;
+        border-color: #fff;
+    }
+}
+:global(html.dark) .themeLocal {
+    background-color: #292929;
+}
+
+
 
 
 @media (max-width: 960px) {

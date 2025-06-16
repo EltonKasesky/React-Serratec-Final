@@ -5,7 +5,9 @@ import { format } from 'date-fns';
 import { useForm } from 'react-hook-form';
 import { useTheme } from "../../context/ThemeContext";
 
+import { useAuth } from "../../context/AuthContext";
 
+document.documentElement.classList.add('dark');
 
 const Clientes = () => {
     const [clientes, setClientes] = useState([]);

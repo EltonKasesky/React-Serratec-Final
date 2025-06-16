@@ -4,7 +4,12 @@
     --text-light: #fff;
     --text-link-light-hover: #21349b;
 }
-
+:global(html.dark) .themeLocal {
+    --bg-link-light: #21349b;
+    --bg-link-light-hover: #fff;
+    --text-light: #fff;
+    --text-link-light-hover: #cdcdcd;
+}
 .container {
     max-width: 100%;
     max-height: 100%;
@@ -43,4 +48,8 @@
 .contentLinks a:hover {
     background-color: var(--bg-link-light-hover);
     color: var(--text-link-light-hover);
+}
+
+:global(html.dark) {
+    background-color: #3A3A3A;
 }
