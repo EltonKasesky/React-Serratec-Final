@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import * as styles from "../Produtos/Produtos.module.css";
+import { useTheme } from "../../context/ThemeContext";
 
 const Produtos = () => {
   const [posts, setPosts] = useState([]);
