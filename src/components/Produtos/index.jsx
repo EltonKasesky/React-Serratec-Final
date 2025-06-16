@@ -5,47 +5,67 @@ import * as styles from "../Produtos/Produtos.module.css";
 
 const Produtos = () => {
   const [posts, setPosts] = useState([]);
-
+  const [busca, setBusca] = useState("");
   useEffect(() => {
-    axios.get("http://localhost:8080/produtos?size=1000")
+    axios
+      .get("http://localhost:8080/produtos")
       .then((response) => setPosts(response.data))
       .catch((error) => console.error("Erro ao enviar requisição: ", error));
   }, []);
 
   function deletePost(id) {
-    axios.delete(`http://localhost:8080/produtos/${id}`)
+    const token = localStorage.getItem("token");
+    const confirmDelete = window.confirm(
+      "Tem certeza que deseja excluir este produto?"
+    );
+    if (!confirmDelete) return;
+
+    axios
+      .delete(`http://localhost:8080/produtos/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then(() => {
-        console.log("Apagado");
+        console.log("Produto apagado");
         setPosts(posts.filter((post) => post.id !== id));
       })
-      .catch(() => console.error("Não encontrado"));
+      .catch((err) =>
+        console.error(
+          "Erro ao deletar produto:",
+          err.response?.data || err.message
+        )
+      );
   }
 
   return (
     <div className={styles.themeLocal}>
       <div className={styles.container}>
-        {posts.map((post) => (
-          <div className={styles.card} key={post.id}>
-            <header className={styles.cardHeader}>
-              <h2>{post.nome}</h2>
-            </header>
-            <p className={styles.cardCategory}>{post.categoria}</p>
-            <div className={styles.cardButtons}>
-              <Link to={`/update/${post.id}`} className={styles.button}>
-                Editar
-              </Link>
-              <Link to={`/more/${post.id}`} className={styles.button}>
-                Leia Mais
-              </Link>
-              <button
-                onClick={() => deletePost(post.id)}
-                className={`${styles.button} ${styles.buttonDelete}`}
-              >
-                Apagar
-              </button>
+        <div className={styles.feedWrapper}>
+          {posts.map((post) => (
+            <div className={styles.card} key={post.id}>
+              <header className={styles.cardHeader}>
+                <h2>{post.nome}</h2>
+              </header>
+              <p className={styles.cardCategory}>{post.categoria}</p>
+              <div className={styles.cardButtons}>
+                <Link
+                  to={`/admin-produtos/editar/${post.id}`}
+                  className={styles.button}
+                >
+                  Editar
+                </Link>
+                <Link to={`/more/${post.id}`} className={styles.button}>
+                  Leia Mais
+                </Link>
+                <button
+                  onClick={() => deletePost(post.id)}
+                  className={`${styles.button} ${styles.buttonDelete}`}
+                >
+                  Apagar
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
