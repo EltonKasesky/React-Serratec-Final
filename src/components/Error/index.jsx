@@ -9,7 +9,7 @@ const Error = () => {
             <main className={`${styles.container} ${styles.themeLocal}`}>
                 <section className={styles.primarySection}>
                     <section className={styles.leftSection}>
-                        <img src="/images/logo/logo.jpg" alt="Logo" />
+                        <img src="/images/logo/FarmaDev-logo.png" alt="Logo" />
                         <div className={styles.leftTexts}>
                             <p>404</p>
                             <h1>Pagina não encontrada</h1>

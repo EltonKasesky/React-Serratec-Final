@@ -7,15 +7,20 @@
   position: fixed;
   width: 100%;
 
-  .footer-container {
+.dark .footer {
+    background-color:#1a1a1a;
+    color: white;            
+}
+
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
-  }
+}
 
-  @media (max-width: 600px) {
+@media (max-width: 600px) {
     .footer-links {
-      flex-direction: column;
-      gap: 0.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
     }
-  }
+
 }

@@ -6,9 +6,11 @@ import { BiLogIn } from "react-icons/bi";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useAuth } from "../../context/AuthContext";
 import { CgDarkMode } from "react-icons/cg";
+import { useTheme } from "../../context/ThemeContext"; // usa o contexto do tema
 
 const Header = () => {
     const { isAuthenticated, logout, userInfo } = useAuth();
+    const { darkMode, toggleTheme } = useTheme(); // pega estado e função de tema
     const navigate = useNavigate();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const isAdmin = userInfo?.roles?.includes("ROLE_ADMIN");
@@ -23,11 +25,7 @@ const Header = () => {
     };
 
     useEffect(() => {
-        if (isMenuOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
+        document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
         return () => {
             document.body.style.overflow = "unset";
         };
@@ -36,21 +34,14 @@ const Header = () => {
     return (
         <header className={styles.navHeader}>
             <Link to="/" onClick={closeMenu}>
-                <img src="/images/logo/logo.jpg" alt="Logo" className={styles.logo} />
+                <img src="/images/logo/FarmaDev-logo.png" alt="Logo" className={styles.logo} />
             </Link>
 
             <nav className={styles.menu}>
-                <ul
-                    className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ""
-                        }`}
-                >
+                <ul className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ""}`}>
                     {isAuthenticated && isAdmin && (
                         <li>
-                            <Link
-                                to={"/admin"}
-                                className={styles.navItem}
-                                onClick={closeMenu}
-                            >
+                            <Link to={"/admin"} className={styles.navItem} onClick={closeMenu}>
                                 Admin
                             </Link>
                         </li>
@@ -61,26 +52,18 @@ const Header = () => {
                         </Link>
                     </li>
                     {isAuthenticated && isAdmin && (
-                        <li>
-                            <Link
-                                to={"/admin-clientes"}
-                                className={styles.navItem}
-                                onClick={closeMenu}
-                            >
-                                Clientes
-                            </Link>
-                        </li>
-                    )}
-                    {isAuthenticated && isAdmin && (
-                        <li>
-                            <Link
-                                to={"/admin-produtos"}
-                                className={styles.navItem}
-                                onClick={closeMenu}
-                            >
-                                Produtos
-                            </Link>
-                        </li>
+                        <>
+                            <li>
+                                <Link to={"/admin-clientes"} className={styles.navItem} onClick={closeMenu}>
+                                    Clientes
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to={"/admin-produtos"} className={styles.navItem} onClick={closeMenu}>
+                                    Produtos
+                                </Link>
+                            </li>
+                        </>
                     )}
                     <li>
                         {isAuthenticated ? (
@@ -88,19 +71,16 @@ const Header = () => {
                                 Logout <TbLogin />
                             </button>
                         ) : (
-                            <Link
-                                to={"/login"}
-                                className={styles.navItem}
-                                onClick={closeMenu}
-                            >
+                            <Link to={"/login"} className={styles.navItem} onClick={closeMenu}>
                                 Login <BiLogIn />
                             </Link>
                         )}
                     </li>
 
                     <li>
-                        <button className={styles.navButton} onClick={() => { }}>
+                        <button className={styles.navButton} onClick={toggleTheme}>
                             <CgDarkMode size={20} style={{ marginRight: "8px" }} />
+                            {darkMode ? "Modo Escuro" : "Modo Claro"}
                         </button>
                     </li>
                 </ul>
