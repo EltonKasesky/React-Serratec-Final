@@ -23,6 +23,11 @@
   min-height: 100vh;
 }
 
+:global(html.dark) .container {
+  background-color: #292929;
+
+}
+
 .feedWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -33,6 +38,11 @@
   border-radius: 10px;
   box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
   padding: 30px;
+}
+
+:global(html.dark) .feedWrapper {
+  background-color: #292929;
+
 }
 
 .card {
@@ -47,6 +57,11 @@
   transition: transform 0.2s ease;
 }
 
+:global(html.dark) .card {
+    background-color: #292929;
+     border: 1px solid #DCDCDC;
+}
+
 .card:hover {
   transform: scale(1.02);
 }
@@ -58,11 +73,21 @@
   text-align: center;
 }
 
+
+:global(html.dark) .cardHeader h2 {
+  color: #DCDCDC;
+}
+
 .cardCategory {
   font-size: 14px;
   color: var(--input-text-light);
   text-align: center;
   margin-bottom: 15px;
+}
+
+
+:global(html.dark) .cardCategory {
+  color: #DCDCDC;
 }
 
 .cardButtons {
@@ -86,9 +111,20 @@
   transition: all 0.2s ease;
 }
 
+:global(html.dark) .button {
+background-color: #21349B;
+border: #404040;
+color: #8DB2E5;
+}
+
+
 .button:hover {
   background-color: var(--btn-bg-light-hover);
   color: var(--btn-text-light-hover);
+}
+
+:global(html.dark) .button:hover {
+  background-color: #292929;
 }
 
 .buttonDelete {
@@ -97,10 +133,32 @@
   color: white;
 }
 
+:global(html.dark) .buttonDeLete {
+  color: white;
+}
+
+
 .buttonDelete:hover {
   background-color: #fff;
   color: #e04343;
   border-color: #e04343;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding-top: 0.8rem;
+
+}
+
+.searchInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 

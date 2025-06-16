@@ -3,6 +3,9 @@ import axios from 'axios';
 import * as styles from './Clientes.module.css';
 import { format } from 'date-fns';
 import { useForm } from 'react-hook-form';
+import { useTheme } from "../../context/ThemeContext";
+
+
 
 const Clientes = () => {
     const [clientes, setClientes] = useState([]);

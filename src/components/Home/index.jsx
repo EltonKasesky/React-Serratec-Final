@@ -1,6 +1,7 @@
 import * as styles from './Home.module.css';
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useTheme } from "../../context/ThemeContext";
 
 const Home = () => {
     const [products, setProducts] = useState([]);

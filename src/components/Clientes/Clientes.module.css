@@ -16,8 +16,16 @@
     align-items: center;
     width: 100%;
     padding: 40px 20px;
-    background-color: var(--bg-secondary-light);
+    background-color: var(--bg-secondary-light); 
+    background-image: url('../../assets/backproduto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     animation: fadeIn 0.4s ease-in;
+}
+
+:global(html.dark) .container{
+    background-color: #292929;
 }
 
 .categoryTitle {
@@ -30,6 +38,11 @@
     align-self: flex-start;
     max-width: 90%;
 }
+
+:global(html.dark) .categoryTitle {
+color:#DCDCDC;
+}
+
 
 .filtroContainer {
     display: flex;
@@ -243,3 +256,8 @@
         transform: translateY(0);
     }
 }
+
+:global(html.dark) .body {
+    background-color: #facc15;
+}
+
