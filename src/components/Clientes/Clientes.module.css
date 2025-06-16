@@ -25,7 +25,7 @@
 }
 
 :global(html.dark) .container{
-    background-color: #292929;
+    background-color: #3A3A3A;
 }
 
 .categoryTitle {
@@ -40,7 +40,7 @@
 }
 
 :global(html.dark) .categoryTitle {
-color:#DCDCDC;
+color:#3A3A3A;
 }
 
 
@@ -91,6 +91,9 @@ color:#DCDCDC;
     border: 1px solid transparent;
     transition: all 0.3s ease;
 }
+:global(html.dark) .product {
+background-color: #292929;
+}
 
 .product:hover {
     transform: translateY(-5px);
@@ -106,6 +109,11 @@ color:#DCDCDC;
     border-bottom: 1px solid var(--border-color);
 }
 
+:global(html.dark) .product h3 {
+    color:#fff;
+}
+
+
 .productInfo {
     display: flex;
     flex-direction: column;
@@ -113,6 +121,12 @@ color:#DCDCDC;
     font-size: 0.95rem;
     color: var(--text-light);
 }
+
+
+:global(html.dark) .productInfo {
+    color:#fff;
+}
+
 
 .modalOverlay {
     position: fixed;
@@ -137,10 +151,18 @@ color:#DCDCDC;
     animation: slideUp 0.4s ease;
 }
 
+:global(html.dark) .modal {   
+    background: #3A3A3A;
+}
+
 .modal h3 {
     color: var(--text-accent);
     font-size: 1.2rem;
     margin-bottom: 16px;
+}
+
+:global(html.dark) .modal h3 {
+    color: #fff;
 }
 
 .modalButtons {
@@ -257,7 +279,4 @@ color:#DCDCDC;
     }
 }
 
-:global(html.dark) .body {
-    background-color: #facc15;
-}
 

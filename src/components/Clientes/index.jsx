@@ -9,6 +9,8 @@ import { useAuth } from "../../context/AuthContext";
 
 document.documentElement.classList.add('dark');
 
+
+
 const Clientes = () => {
     const [clientes, setClientes] = useState([]);
     const [filtro, setFiltro] = useState('todos');
