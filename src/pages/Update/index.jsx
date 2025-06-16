@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header";
 import * as styles from './Update.module.css';
+import { useTheme } from "../../context/ThemeContext";
 
 
 const validationPost = yup.object().shape({

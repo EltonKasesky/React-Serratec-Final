@@ -6,6 +6,10 @@
   background-color: var(--bg-secondary-light); 
 }
 
+:global(html.dark) .container {
+    background-color: #292929;
+}
+
 .card {
   width: 100%;
   max-width: 420px;
@@ -15,12 +19,22 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
 }
 
+:global(html.dark) .card{
+  background-color: #292929;
+   border: 2px solid #808080;
+}
+
 .title {
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #21349b; 
 }
+
+:global(html.dark) .title {
+  color: #fff;
+}
+
 
 .formGroup {
   display: flex;
@@ -32,6 +46,10 @@ label {
   margin-bottom: 5px;
   font-weight: 500;
   color: #333;
+}
+
+:global(html.dark) label {
+  color: #fff;
 }
 
 input {

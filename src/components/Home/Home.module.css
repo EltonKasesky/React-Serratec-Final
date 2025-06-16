@@ -20,16 +20,10 @@
   background-color: var(--bg-secondary-light);
 }
 
-/* Light mode (padrão) */
-.main._container_1ckez_27._themeLocal_1ckez_1 {
-  background-color: var(--bg-main-light); /* exemplo */
-}
-
-/* Dark mode */
-.dark .main._container_1ckez_27._themeLocal_1ckez_1 {
-  background-color: #1e1e1e; /* ou 'aqua' se você quiser testar visualmente */
-  color: #f5f5f5;
-}
+:global(html.dark) .container {
+    background-color: #292929;
+    
+  }
 
 
 .categorySection {
@@ -38,6 +32,7 @@
     margin-bottom: 48px;
 }
 
+
 .categoryTitle {
     font-size: 1.8rem;
     font-weight: 600;
@@ -45,6 +40,11 @@
     color: var(--text-light);
     border-left: 4px solid var(--text-accent);
     padding-left: 12px;
+}
+
+:global(html.dark) .categoryTitle {
+    color:#DCDCDC;
+        border-left: 4px solid #555555;
 }
 
 .contentProducts {
@@ -68,6 +68,12 @@
     border: 1px solid transparent;
 }
 
+:global(html.dark) .product {
+ background-color: #292929;
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-color);
+}
+
 .product:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-hover);
@@ -82,6 +88,10 @@
     color: var(--text-accent);
 }
 
+:global(html.dark) .product h3 {
+    color:#DCDCDC;
+}
+
 .productInfo {
     display: flex;
     flex-direction: column;
@@ -89,6 +99,10 @@
     margin-top: 12px;
     color: var(--text-light);
     font-size: 0.95rem;
+}
+
+:global(html.dark) .productInfo  {
+    color:#DCDCDC;
 }
 
 .buyContent {
@@ -112,4 +126,10 @@
     border: 1px solid var(--buy-bg-light);
     background-color: transparent;
     color: var(--text-accent);
+}
+
+:global(html.dark) .buyButton:hover {
+    border: 1px solid var(--buy-bg-light);
+    background-color: #292929;
+    color: #DCDCDC;
 }

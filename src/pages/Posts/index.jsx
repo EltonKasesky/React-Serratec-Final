@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import styles from './Posts.module.css';
 import Footer from "../../components/Footer/footer";
 import Header from "../../components/Header";
+import { useTheme } from "../../context/ThemeContext";
 
 const validationPost = yup.object().shape({
   nome: yup
